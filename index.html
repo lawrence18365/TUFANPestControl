@@ -590,120 +590,98 @@
                 grid-template-columns: 1fr;
             }
         }
-  /* Google Reviews Section Styles */
-.reviews {
-    padding: 80px 0;
-    background-color: white; /* Changed from tufan-primary-color */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.reviews h2 {
-    font-size: 5em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: black; /* Changed from tufan-text-color */
-}
-
-.review-carousel {
-    overflow-x: auto;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.review-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.review-container {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-}
-
-.review-item {
-    flex: 0 0 300px;
-    background-color: green; /* Modified to match accent color */
-    border-radius: 10px;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    transition: var(--transition);
-}
-
-.review-item:hover {
-    transform: translateY(-5px);
-}
-
-.review-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.google-logo-placeholder {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-}
-
-.review-rating {
-    color: #ffd700;
-    font-size: 1rem;
-}
-
-.review-content {
-    font-style: italic;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    flex-grow: 1;
-    font-weight: 100;
-    color: black; /* Changed from tufan-text-color */
-}
-
-.review-author {
-    font-weight: 100;
-    color: var(--secondary-color); /* Changed from accent-color */
-    text-align: right;
-    font-size: 0.9rem;
-}
-
-.review-link {
-     display: inline-block;
-    background-color: var(--tufan-accent-color);
-    color: var(--tufan-text-color);
-    padding: 15px 40px;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}   
-}
-
-.review-link:hover {
-    background-color: var(--primary-color); /* Changed to primary color */
-}
-
-@media (max-width: 768px) {
-    .review-item {
-        flex: 0 0 280px;
+  .reviews {
+    background-color: #fff;
+        padding: 100px 0;
     }
-}
-
-       
+    .reviews .section-title {
+        color: var(--secondary-color);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .review-carousel {
+        overflow-x: auto;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .review-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    .review-container {
+        display: flex;
+        gap: 30px;
+        padding: 10px;
+    }
+    .review-item {
+        flex: 0 0 350px;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        height: 400px; /* Fixed height for all cards */
+    }
+    .review-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .google-logo-placeholder {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+    .review-rating {
+        color: #ffd700;
+        font-size: 1.2rem;
+    }
+    .review-content {
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-bottom: 15px;
+    }
+    .review-author {
+        font-weight: bold;
+        color: var(--secondary-color);
+        text-align: right;
+        font-size: 0.9rem;
+        margin-top: auto;
+    }
+    .button-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .review-link {
+        display: inline-block;
+    }
+    @media (max-width: 768px) {
+        .review-item {
+            flex: 0 0 300px;
+            height: 350px; /* Adjusted height for mobile */
+        }
+    }
           .about-us {
             background-color: var(--light-bg);
             padding: 100px 0;
+        }
+        .about-us p{
+            text-align: center;
+        }
+        .about-us t {
+            text-align: center;
+            width: 80%;
         }
 
         .about-content {
@@ -832,140 +810,145 @@
                 left: 0%;
             }
         }
-        .our-work {
-            background-color: var(--light-bg);
-            padding: 100px 0;
-        }
+      .our-work {
+    background-color: var(--light-bg);
+    padding: 100px 0;
+    overflow: hidden;
+}
 
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
+.work-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
 
-        .before-after {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
+.process-showcase, .results-showcase {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .before-after img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.process-showcase:hover, .results-showcase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
 
-        .before-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-        }
+.process-showcase h3, .results-showcase h3 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-        .slider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background-color: #fff;
-            cursor: ew-resize;
-        }
+.process-steps, .result-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
+.process-step, .result-item {
+    flex: 1 1 200px;
+    max-width: 250px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--light-bg);
+    transition: transform 0.3s ease;
+}
 
-        .slider-button::before,
-        .slider-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 0;
-            height: 0;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-        }
+.process-step:hover, .result-item:hover {
+    transform: scale(1.05);
+}
 
-        .slider-button::before {
-            left: 5px;
-            border-right: 5px solid #333;
-        }
+.step-icon, .result-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+    transition: transform 0.3s ease;
+}
 
-        .slider-button::after {
-            right: 5px;
-            border-left: 5px solid #333;
-        }
+.process-step:hover .step-icon, .result-item:hover .result-icon {
+    transform: rotate(360deg);
+}
 
-        .infographic {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--box-shadow);
-        }
+.process-step h4, .result-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
 
-        .infographic h3 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.process-step p, .result-item p {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
 
-        .process-steps {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
+.cta-container {
+    text-align: center;
+    margin-top: 50px;
+}
 
-        .process-step {
-            text-align: center;
-            width: 120px;
-        }
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 10px;
-            color: #fff;
-            font-size: 2em;
-        }
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
 
-        .video-showcase {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
+@media (max-width: 768px) {
+    .process-steps, .result-items {
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .video-showcase iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+    .process-step, .result-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
 
-        @media (max-width: 768px) {
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .process-showcase, .results-showcase {
+        padding: 30px 20px;
+    }
+
+    .process-showcase h3, .results-showcase h3 {
+        font-size: 1.8em;
+    }
+
+    .step-icon, .result-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3em;
+    }
+
+    .process-step h4, .result-item h4 {
+        font-size: 1em;
+    }
+
+    .process-step p, .result-item p {
+        font-size: 0.85em;
+    }
+}
        .contact {
             background-color: #fff;
             padding: 100px 0;
@@ -1286,92 +1269,93 @@
         </div>
         <div class="trust-badges">
             <span class="trust-badge" title="We guarantee a pest-free environment or your money back!">100% Satisfaction Guarantee</span>
-            <span class="trust-badge" title="Our products are safe for children and pets">Child & Pet Safe</span>
+            <span class="trust-badge" title="Our products are safe for children and pets">Child<br>&<br>Pet Safe</span>
             <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
-            <span class="trust-badge" title="All our technicians are licensed and insured">Licensed & Insured</span>
+            <span class="trust-badge" title="All our technicians are licensed and insured">Licensed<br>&<br>Insured</span>
         </div>
     </section>
-
-           <section id="reviews" class="reviews">
-        <div class="container">
-            <h2>Google Reviews</h2>
-            <div class="review-carousel">
-                <div class="review-container">
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"I rang as a desperate mother whose son had been sick over our new fabric lounge and rug. They were able to move another job and sort my dilemma in 24 hours. The couch and carpet looks as good as new and the house smells beautifully clean. Judit and Peter were authentically professional and seemed to truly love and believe in their products and service with a wealth of knowledge, superior service and beyond brilliant result . Thank you, I will definitely call on you again"</p>
-                        <span class="review-author">- Melanie Hemsworth</span>
+<section id="reviews" class="reviews">
+    <div class="container">
+        <h2 class="section-title">Google Reviews</h2>
+        <div class="review-carousel">
+            <div class="review-container">
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"I recently had my carpet cleaned by Pro Clean and I couldn't be happier with the service I received. From the moment I contacted them, the communication was friendly and polite. Peter and Judit were professional and demonstrated great knowledge of what they were doing. They took the time to explain the process and answer the questions I had. The results were outstanding and my carpet looks as good as new. I highly recommend Pro Clean."</p>
-                        <span class="review-author">- Honorio Lisboa Neto</span>
+                    <p class="review-content">"Tifan Pest Control exceeded my expectations with their service. Prakash was knowledgeable and attentive to our concerns. He took the time to explain the process and ensured that the treatment was done meticulously. The best part was that the products used were safe for our family, so we didn't need to leave our home. I'm extremely satisfied with their service and will definitely use them again."</p>
+                    <span class="review-author">- Baje don</span>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"Judit and Peter from Pro Clean did an amazing clean (and protection cover) on our sofa, big rug and outdoor furniture today. They provided exceptional service with everything now looking like new! They use the best of cleaning materials that don't smell and are appropriate for the environment (a big tick these days!)... and excellent cleaning tools that protect our materials too. Super nice too, highly recommended.:)"</p>
-                        <span class="review-author">- Trish Du Temple</span>
+                    <p class="review-content">"I have recently used Tifan Pest Control's service for Precautions from German Cockroaches. Prakash is very professional and punctual. The service was prompt and thorough. As he used human-friendly chemical, there is no need to vacant the unit after the operation. Its my second time and will ofcourse remember him for next time. I would like to recommend his service to all."</p>
+                    <span class="review-author">- Sonam Sherpa</span>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"I have just had blood cleaned out of the carpet after a fall. Peter and Judit did a wonderful job. You would not know there was any blood there at all. Every step of the way was explained extensively. Very impressed with the outcome and prompt service. Would highly recommend to anyone."</p>
-                        <span class="review-author">- Kylie Jenkins</span>
+                    <p class="review-content">"Outstanding service! He was professional, punctual, and thorough in addressing our pest issue. Explained everything clearly and used safe, effective methods. We've noticed a significant improvement since his visit. Highly recommend him for any pest control needs!"</p>
+                    <span class="review-author">- Ajesh Lamichhane</span>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"Peter & Judit were just EXCEPTIONAL. knowledgeable & passionate about doing a GREAT job. Thank you, the results of our carpets were fantastic. They have clearly spent time researching and using the right products for the right stains. Thank you!"</p>
-                        <span class="review-author">- Tom Humphries</span>
+                    <p class="review-content">"Perfect service and 100% effective. I would recommend anyone facing pest infestations to reach out to Tufan Pest Control Sydney, their service is on point and you'd see the difference within 48hrs from contact. Thank you Prakash:)"</p>
+                    <span class="review-author">- Madan</span>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
-                    <div class="review-item">
-                        <div class="review-header">
-                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
-                            <div class="review-rating">★★★★★</div>
-                        </div>
-                        <p class="review-content">"There is a reason they have so many 5 star reviews. We got our fabric couch cleaned and it looks great! Good honest communication and reliable service. If you need a cleaning service, use Pro Clean. They are amazing. Thank you again Judit and Peter!"</p>
-                        <span class="review-author">- Laura Martin</span>
+                    <p class="review-content">"Very good service and easy to talk to when booking with prakash over the phone. Quick service and honest work done also arrived to do the job when promised highly recommended to everyone 🙏🏽"</p>
+                    <span class="review-author">- Nischal Bhattarai</span>
+                </div>
+                <div class="review-item">
+                    <div class="review-header">
+                        <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                        <div class="review-rating">★★★★★</div>
                     </div>
+                    <p class="review-content">"Excellent service! Tufan pest control finds everything and more about quick pest cockroaches, rodents, ... It's also useful to know where pests enter your house. They also found a leak in my shower."</p>
+                    <span class="review-author">- Pratikshya pokhrel</span>
                 </div>
             </div>
-            <a href="https://g.page/procleanone" class="review-link">See All Google Reviews</a>
         </div>
-    </section>
+        <div class="button-container">
+            <a href="https://g.page/procleanone" class="cta-button review-link">See All Google Reviews</a>
+        </div>
+    </div>
+</section>
 
         <section id="about" class="about-us">
-        <div class="container">
-            <h2 class="section-title">About TUFAN Pest Control</h2>
-            <div class="about-content">
-                <div class="about-video">
-                    <iframe width="100%" height="450" src="/api/placeholder/800/450" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p>At TUFAN Pest Control, we're more than just pest eliminators. We're your neighbors, your protectors, and your partners in creating a safe, pest-free environment for your family and business.</p>
+    <div class="container">
+        <h2 class="section-title">About TUFAN Pest Control</h2>
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="https://i.postimg.cc/6QJB0LzV/image-79.webp" alt="TUFAN Pest Control Team" width="100%" height="450">
+            </div>
+                <t>At TUFAN Pest Control, we're more than just pest eliminators. We're your neighbors, your protectors, and your partners in creating a safe, pest-free environment for your family and business.</t>
                 <div class="team-section">
                     <div class="team-member">
-                        <img src="/api/placeholder/200/200" alt="John Tufan - Founder">
+                        <img src="https://i.postimg.cc/RWGMphT5/image-80.webp" alt="John Tufan - Founder">
                         <h3>John Tufan</h3>
                         <p>Founder & CEO</p>
                     </div>
                     <div class="team-member">
-                        <img src="/api/placeholder/200/200" alt="Sarah Lee - Head Technician">
+                        <img src="https://i.postimg.cc/k27JyKKv/image-81.webp" alt="Sarah Lee - Head Technician">
                         <h3>Sarah Lee</h3>
                         <p>Head Technician</p>
                     </div>
                     <div class="team-member">
-                        <img src="/api/placeholder/200/200" alt="Mike Johnson - Customer Service Manager">
+                        <img src="https://cdn-uploads.huggingface.co/production/uploads/noauth/itz-0UFKRWofMw178e1GF.webp" alt="Mike Johnson - Customer Service Manager">
                         <h3>Mike Johnson</h3>
                         <p>Customer Service Manager</p>
                     </div>
@@ -1412,55 +1396,82 @@
         </div>
     </section>
       
-    <section class="our-work">
-        <div class="container">
-            <h2 class="section-title">Our Work in Action</h2>
-            <div class="work-grid">
-                <div class="before-after">
-                    <img src="/api/placeholder/600/400" alt="After Pest Control">
-                    <div class="before-image">
-                        <img src="/api/placeholder/600/400" alt="Before Pest Control">
+   <section class="our-work">
+    <div class="container">
+        <h2 class="section-title">Our Pest Control Magic</h2>
+        <div class="work-grid">
+            <div class="process-showcase">
+                <h3>Our 4-Step Pest Elimination Process</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>1. Inspect</h4>
+                        <p>Thorough property examination to identify pest issues</p>
                     </div>
-                    <div class="slider">
-                        <div class="slider-button"></div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h4>2. Identify</h4>
+                        <p>Precise pest identification for targeted treatment</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h4>3. Treat</h4>
+                        <p>Eco-friendly and effective pest elimination methods</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>4. Prevent</h4>
+                        <p>Long-term strategies to keep pests away</p>
                     </div>
                 </div>
-                <div class="infographic">
-                    <h3>Our Pest Control Process</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-icon">1</div>
-                            <p>Inspection</p>
+            </div>
+            <div class="results-showcase">
+                <h3>The TUFAN Difference</h3>
+                <div class="result-items">
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-clock"></i>
                         </div>
-                        <div class="process-step">
-                            <div class="step-icon">2</div>
-                            <p>Identification</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-icon">3</div>
-                            <p>Treatment</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-icon">4</div>
-                            <p>Prevention</p>
-                        </div>
+                        <h4>Fast Action</h4>
+                        <p>See results within 24-48 hours</p>
                     </div>
-                </div>
-                <div class="video-showcase">
-                    <iframe src="/api/placeholder/560/315" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="before-after">
-                    <img src="/api/placeholder/600/400" alt="After Termite Treatment">
-                    <div class="before-image">
-                        <img src="/api/placeholder/600/400" alt="Before Termite Treatment">
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Eco-Friendly</h4>
+                        <p>Safe for your family and the environment</p>
                     </div>
-                    <div class="slider">
-                        <div class="slider-button"></div>
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h4>Long-Lasting</h4>
+                        <p>Continuous protection against infestations</p>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Property Safe</h4>
+                        <p>No damage to your home or belongings</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="cta-container">
+            <a href="#contact" class="cta-button">Experience the TUFAN Difference</a>
+        </div>
+    </div>
+</section>
          <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
@@ -1492,13 +1503,13 @@
                 </div>
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Pest Control Street, Sydney, NSW 2000</p>
-                    <p><i class="fas fa-phone"></i> (02) 9876 5432</p>
-                    <p><i class="fas fa-envelope"></i> info@tufanpestcontrol.com</p>
+                    <p><i class="fas fa-phone"></i> +61 412 853 150</p>
+                    <p><i class="fas fa-envelope"></i> Tufanpestcontrol@gmail.com</p>
                     <h3>Business Hours</h3>
-                    <p><i class="far fa-clock"></i> Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p><i class="far fa-clock"></i> Saturday: 9:00 AM - 2:00 PM</p>
-                    <p><i class="far fa-clock"></i> Sunday: Closed</p>
+<p><i class="far fa-clock"></i> Monday - Thursday: 9:00 AM - 8:00 PM</p>
+<p><i class="far fa-clock"></i> Friday: Closed</p>
+<p><i class="far fa-clock"></i> Saturday: 6:00 AM - 8:00 PM</p>
+<p><i class="far fa-clock"></i> Sunday: Closed</p>
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26537.678007631415!2d151.20434455!3d-33.8688197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1653645062058!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
                     </div>
