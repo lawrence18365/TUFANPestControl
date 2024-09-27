@@ -372,23 +372,39 @@
                 grid-template-columns: 1fr;
             }
         }
-        .why-choose-us {
-            background-color: var(--light-bg);
-            padding: 100px 0;
+        .section-title {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+       
+        .trust-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 3rem;
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .trust-item {
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .trust-item:hover {
@@ -396,9 +412,9 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .expert-profile {
+        .expert-profile, .testimonial, .awards {
+            padding: 2rem;
             text-align: center;
-            padding: 20px;
         }
 
         .expert-profile img {
@@ -406,80 +422,50 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            border: 3px solid #e60000;
         }
 
-        .expert-profile h3 {
-            margin-bottom: 5px;
-            color: var(--secondary-color);
-        }
-
-        .expert-profile p {
-            color: var(--text-color);
-            font-size: 0.9em;
-        }
-
-        .testimonial {
-            padding: 20px;
-            text-align: center;
+        .expert-profile h3, .awards h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
         }
 
         .testimonial q {
             font-style: italic;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
         }
 
-        .client-logo {
-            max-width: 150px;
-            margin: 0 auto;
-        }
-
-        .awards {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .award-logo {
+        .client-logo, .award-logo {
             max-width: 100px;
-            margin: 10px auto;
+            margin: 1rem auto;
         }
 
         .trust-badges {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 1rem;
         }
 
         .trust-badge {
-            background-color: var(--primary-color);
+            background-color: #e60000;
             color: #fff;
-            padding: 10px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
             cursor: help;
-            transition: var(--transition);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .trust-badge:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .social-proof {
-            background-color: var(--accent-color);
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 30px;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 1024px) {
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            background-color: #cc0000;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -487,7 +473,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
         
           .success-stories {
             background-color: var(--light-bg);
@@ -605,7 +590,115 @@
                 grid-template-columns: 1fr;
             }
         }
-        
+  /* Google Reviews Section Styles */
+.reviews {
+    padding: 80px 0;
+    background-color: white; /* Changed from tufan-primary-color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews h2 {
+    font-size: 5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: black; /* Changed from tufan-text-color */
+}
+
+.review-carousel {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.review-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.review-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.review-item {
+    flex: 0 0 300px;
+    background-color: green; /* Modified to match accent color */
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.google-logo-placeholder {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.review-rating {
+    color: #ffd700;
+    font-size: 1rem;
+}
+
+.review-content {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    font-weight: 100;
+    color: black; /* Changed from tufan-text-color */
+}
+
+.review-author {
+    font-weight: 100;
+    color: var(--secondary-color); /* Changed from accent-color */
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.review-link {
+     display: inline-block;
+    background-color: var(--tufan-accent-color);
+    color: var(--tufan-text-color);
+    padding: 15px 40px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}   
+}
+
+.review-link:hover {
+    background-color: var(--primary-color); /* Changed to primary color */
+}
+
+@media (max-width: 768px) {
+    .review-item {
+        flex: 0 0 280px;
+    }
+}
 
        
           .about-us {
@@ -627,6 +720,7 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
         }
+        
 
         .team-section {
             display: flex;
@@ -1018,10 +1112,21 @@
             margin-top: 20px;
         }
 
-        .trust-badge {
-            max-width: 80px;
-            height: auto;
-        }
+      .trust-badge {
+    width: 140px; /* Increase the width for more space */
+    height: auto; /* Keep height flexible */
+    background-color: #e60000; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 0.75rem 1rem; /* More padding for better spacing */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1rem; /* Increase font size slightly */
+    font-weight: bold; /* Bold font */
+    text-align: center; /* Center the text */
+    margin: 0.5rem; /* Add spacing around each badge */
+    cursor: help; /* Cursor style */
+    display: inline-block; /* Prevent badges from stretching */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
         .contact-info-footer {
             font-size: 0.9em;
@@ -1157,94 +1262,92 @@
             </div>
         </div>
     </section>
-
-        <section class="why-choose-us">
-        <div class="container">
-            <h2 class="section-title">Why Trust TUFAN Pest Control</h2>
-            <div class="trust-grid">
-                <div class="trust-item expert-profile">
-                    <img src="/api/placeholder/150/150" alt="John Smith, Pest Control Expert">
-                    <h3>John Smith</h3>
-                    <p>Certified Pest Control Technician</p>
-                    <p>15+ years experience</p>
-                </div>
-                <div class="trust-item testimonial">
-                    <q>TUFAN's service is unparalleled. They solved our persistent pest problem in just one visit!</q>
-                    <p>- Sarah Johnson, Homeowner</p>
-                    <img src="/api/placeholder/150/50" alt="Client Logo" class="client-logo">
-                </div>
-                <div class="trust-item awards">
-                    <h3>Our Accolades</h3>
-                    <img src="/api/placeholder/100/100" alt="Best Pest Control Service 2023" class="award-logo">
-                    <p>Best Pest Control Service 2023</p>
-                    <img src="/api/placeholder/100/100" alt="Eco-Friendly Certification" class="award-logo">
-                    <p>Eco-Friendly Certified</p>
-                </div>
+  <section class="trust-section">
+        <h2>Why Trust TUFAN Pest Control</h2>
+        <div class="trust-grid">
+            <div class="trust-item expert-profile">
+                <img src="https://i.pravatar.cc/150?img=68" alt="John Smith, Pest Control Expert">
+                <h3>John Smith</h3>
+                <p>Certified Pest Control Technician</p>
+                <p>15+ years experience</p>
             </div>
-            <div class="trust-badges">
-                <span class="trust-badge" title="We guarantee a pest-free environment or your money back!">100% Satisfaction Guarantee</span>
-                <span class="trust-badge" title="Our products are safe for children and pets">Child & Pet Safe</span>
-                <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
-                <span class="trust-badge" title="All our technicians are licensed and insured">Licensed & Insured</span>
+            <div class="trust-item testimonial">
+                <q>TUFAN's service is unparalleled. They solved our persistent pest problem in just one visit!</q>
+                <p>- Sarah Johnson, Homeowner</p>
+                <img src="/api/placeholder/100/50" alt="Client Logo" class="client-logo">
             </div>
-
+            <div class="trust-item awards">
+                <h3>Our Accolades</h3>
+                <img src="https://i.postimg.cc/8JSpTsbC/Australia-Pest-Control-Award-ezgif-com-webp-to-png-converter-removebg-preview.png" alt="Best Pest Control Service 2023" class="award-logo">
+                <p>Best Pest Control Service 2023</p>
+                <img src="https://i.postimg.cc/W1jqLzCP/pngtree-green-eco-friendly-badge-design-png-image-6093125-removebg-preview.png" alt="Eco-Friendly Certification" class="award-logo">
+                <p>Eco-Friendly Certified</p>
+            </div>
+        </div>
+        <div class="trust-badges">
+            <span class="trust-badge" title="We guarantee a pest-free environment or your money back!">100% Satisfaction Guarantee</span>
+            <span class="trust-badge" title="Our products are safe for children and pets">Child & Pet Safe</span>
+            <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
+            <span class="trust-badge" title="All our technicians are licensed and insured">Licensed & Insured</span>
         </div>
     </section>
 
-       <section class="success-stories">
+           <section id="reviews" class="reviews">
         <div class="container">
-            <h2 class="section-title">Client Success Stories</h2>
-            <div class="success-grid">
-                <div class="case-study">
-                    <div class="case-study-image">
-                        <img src="/api/placeholder/500/250" alt="Office Before Treatment">
-                        <div class="case-study-overlay">
-                            <span>After Treatment: Pest-Free in 24 Hours</span>
+            <h2>Google Reviews</h2>
+            <div class="review-carousel">
+                <div class="review-container">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
                         </div>
+                        <p class="review-content">"I rang as a desperate mother whose son had been sick over our new fabric lounge and rug. They were able to move another job and sort my dilemma in 24 hours. The couch and carpet looks as good as new and the house smells beautifully clean. Judit and Peter were authentically professional and seemed to truly love and believe in their products and service with a wealth of knowledge, superior service and beyond brilliant result . Thank you, I will definitely call on you again"</p>
+                        <span class="review-author">- Melanie Hemsworth</span>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Office Termite Infestation</h3>
-                        <p>This office was severely infested with termites. We eradicated them completely in just 24 hours, saving the building from further damage.</p>
-                        <a href="#" class="cta-button">Read Full Case Study</a>
-                    </div>
-                </div>
-                <div class="case-study">
-                    <div class="case-study-image">
-                        <img src="/api/placeholder/500/250" alt="Restaurant Kitchen Before Treatment">
-                        <div class="case-study-overlay">
-                            <span>After Treatment: 100% Cockroach-Free</span>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
                         </div>
+                        <p class="review-content">"I recently had my carpet cleaned by Pro Clean and I couldn't be happier with the service I received. From the moment I contacted them, the communication was friendly and polite. Peter and Judit were professional and demonstrated great knowledge of what they were doing. They took the time to explain the process and answer the questions I had. The results were outstanding and my carpet looks as good as new. I highly recommend Pro Clean."</p>
+                        <span class="review-author">- Honorio Lisboa Neto</span>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Restaurant Kitchen Cockroach Problem</h3>
-                        <p>A popular local restaurant was struggling with a persistent cockroach infestation. Our treatment eliminated the problem, allowing them to pass their health inspection with flying colors.</p>
-                        <a href="#" class="cta-button">Read Full Case Study</a>
-                    </div>
-                </div>
-                <div class="video-testimonial">
-                    <iframe src="/api/placeholder/560/315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="case-study">
-                    <div class="case-study-image">
-                        <img src="/api/placeholder/500/250" alt="Residential Yard Before Treatment">
-                        <div class="case-study-overlay">
-                            <span>After Treatment: Mosquito-Free Summer</span>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
                         </div>
+                        <p class="review-content">"Judit and Peter from Pro Clean did an amazing clean (and protection cover) on our sofa, big rug and outdoor furniture today. They provided exceptional service with everything now looking like new! They use the best of cleaning materials that don't smell and are appropriate for the environment (a big tick these days!)... and excellent cleaning tools that protect our materials too. Super nice too, highly recommended.:)"</p>
+                        <span class="review-author">- Trish Du Temple</span>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Residential Mosquito Control</h3>
-                        <p>This family couldn't enjoy their backyard due to a severe mosquito problem. Our treatment allowed them to reclaim their outdoor space and enjoy a pest-free summer.</p>
-                        <a href="#" class="cta-button">Read Full Case Study</a>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <p class="review-content">"I have just had blood cleaned out of the carpet after a fall. Peter and Judit did a wonderful job. You would not know there was any blood there at all. Every step of the way was explained extensively. Very impressed with the outcome and prompt service. Would highly recommend to anyone."</p>
+                        <span class="review-author">- Kylie Jenkins</span>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <p class="review-content">"Peter & Judit were just EXCEPTIONAL. knowledgeable & passionate about doing a GREAT job. Thank you, the results of our carpets were fantastic. They have clearly spent time researching and using the right products for the right stains. Thank you!"</p>
+                        <span class="review-author">- Tom Humphries</span>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <img src="https://i.postimg.cc/Qxk5GyLn/imgbin-google-logo-google-adwords-g-suite-google-account-png-removebg-preview.webp" alt="Google Logo" class="google-logo-placeholder">
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <p class="review-content">"There is a reason they have so many 5 star reviews. We got our fabric couch cleaned and it looks great! Good honest communication and reliable service. If you need a cleaning service, use Pro Clean. They are amazing. Thank you again Judit and Peter!"</p>
+                        <span class="review-author">- Laura Martin</span>
                     </div>
                 </div>
             </div>
-            <div class="client-logos">
-                <img src="/api/placeholder/120/60" alt="Client Logo 1" class="client-logo">
-                <img src="/api/placeholder/120/60" alt="Client Logo 2" class="client-logo">
-                <img src="/api/placeholder/120/60" alt="Client Logo 3" class="client-logo">
-                <img src="/api/placeholder/120/60" alt="Client Logo 4" class="client-logo">
-                <img src="/api/placeholder/120/60" alt="Client Logo 5" class="client-logo">
-            </div>
+            <a href="https://g.page/procleanone" class="review-link">See All Google Reviews</a>
         </div>
     </section>
 
