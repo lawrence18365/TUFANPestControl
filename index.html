@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUFAN Pest Control | Say Goodbye to Pests—Guaranteed!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #e60000;
+            --secondary-color: #333;
+            --accent-color: #ffeeee;
+            --text-color: #333;
+            --light-bg: #f8f8f8;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Futura', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 200px;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary-color), #ff4d4d);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: var(--transition);
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(45deg, #ff4d4d, var(--primary-color));
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+        }
+
+        .sticky-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 5px 15px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .sticky-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+        }
+
+        .services {
+            background-color: #fff;
+            padding: 100px 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .service-item {
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            height: 300px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-content {
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-icon {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-item h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 1.5em;
+        }
+
+        .service-item p {
+            color: var(--text-color);
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .service-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(230, 0, 0, 0.9);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-item:hover .service-hover {
+            opacity: 1;
+        }
+
+        .service-hover h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .service-hover p {
+            font-size: 0.9em;
+        }
+
+        @keyframes pestAnimation {
+            0% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(10px) rotate(10deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+
+        .pest-icon {
+            display: inline-block;
+            animation: pestAnimation 2s infinite;
+        }
+
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .why-choose-us {
+            background-color: var(--light-bg);
+            padding: 100px 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .trust-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .expert-profile {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .expert-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .expert-profile h3 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .expert-profile p {
+            color: var(--text-color);
+            font-size: 0.9em;
+        }
+
+        .testimonial {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .testimonial q {
+            font-style: italic;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .client-logo {
+            max-width: 150px;
+            margin: 0 auto;
+        }
+
+        .awards {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .award-logo {
+            max-width: 100px;
+            margin: 10px auto;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .trust-badge {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            cursor: help;
+            transition: var(--transition);
+        }
+
+        .trust-badge:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .social-proof {
+            background-color: var(--accent-color);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+          .success-stories {
+            background-color: var(--light-bg);
+            padding: 100px 0;
+        }
+
+        .success-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .case-study {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-study-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-study-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .case-study:hover .case-study-overlay {
+            opacity: 1;
+        }
+
+        .case-study-overlay span {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .case-study-content {
+            padding: 20px;
+        }
+
+        .case-study h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .case-study p {
+            color: var(--text-color);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .video-testimonial {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-testimonial iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .client-logo {
+            max-width: 120px;
+            margin: 15px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+        }
+
+        @media (max-width: 768px) {
+            .success-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+
+       
+          .about-us {
+            background-color: var(--light-bg);
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--light-bg);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--box-shadow);
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 15px;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+        .our-work {
+            background-color: var(--light-bg);
+            padding: 100px 0;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .before-after {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .before-after img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: #fff;
+            cursor: ew-resize;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider-button::before,
+        .slider-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .slider-button::before {
+            left: 5px;
+            border-right: 5px solid #333;
+        }
+
+        .slider-button::after {
+            right: 5px;
+            border-left: 5px solid #333;
+        }
+
+        .infographic {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .infographic h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .process-step {
+            text-align: center;
+            width: 120px;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px;
+            color: #fff;
+            font-size: 2em;
+        }
+
+        .video-showcase {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .video-showcase iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+       .contact {
+            background-color: #fff;
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(230, 0, 0, 0.2);
+        }
+
+        .social-proof-contact {
+            background-color: var(--accent-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .map-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+
+      
+         footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .trust-badge {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .contact-info-footer {
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        .contact-info-footer i {
+            width: 20px;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1076-cDGfGTizXPHzy96qtphNbcpjdCqbQV.jpeg" alt="TUFAN Pest Control Logo" class="logo">
+    
+    <nav class="sticky-nav">
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#testimonials">Testimonials</a>
+    </nav>
+
+    <div class="floating-cta">
+        <a href="#contact" class="cta-button">Get Instant Protection Now</a>
+    </div>
+
+    <main>
+        <section id="home" class="hero">
+            <video class="hero-video" autoplay loop muted>
+                <source src="/api/placeholder/1920/1080" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Say Goodbye to Pests—Guaranteed!</h1>
+                    <p>Expert pest control services that protect your home and business. Fast. Reliable. 24/7.</p>
+                    <a href="#contact" class="cta-button">Get Instant Protection Now</a>
+                </div>
+            </div>
+        </section>
+ <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🪳</span>
+                        </div>
+                        <h3>Cockroach Control</h3>
+                        <p>Get Rid of Cockroaches, Once and For All—Fast, Safe, and Effective</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Total Cockroach Elimination</h4>
+                        <p>Our advanced treatment targets even the most stubborn infestations, ensuring your home stays cockroach-free for good.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🐀</span>
+                        </div>
+                        <h3>Rodent Control</h3>
+                        <p>Protect Your Home from Destructive Rodents—Humane and Long-Lasting Solutions</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Complete Rodent Proofing</h4>
+                        <p>We don't just remove rodents; we seal entry points and provide ongoing protection to keep them out permanently.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🐜</span>
+                        </div>
+                        <h3>Ant Control</h3>
+                        <p>Stop Ant Invasions in Their Tracks—Targeted Treatments for Lasting Results</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Ant Colony Elimination</h4>
+                        <p>Our treatments target the entire colony, not just visible ants, ensuring complete and long-term ant control.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🏠</span>
+                        </div>
+                        <h3>Termite Control</h3>
+                        <p>Safeguard Your Property from Costly Damage—Expert Termite Detection and Elimination</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Comprehensive Termite Protection</h4>
+                        <p>Our state-of-the-art termite barriers and treatments provide long-term protection for your biggest investment—your home.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🦟</span>
+                        </div>
+                        <h3>Mosquito Control</h3>
+                        <p>Reclaim Your Outdoor Space—Effective Mosquito Reduction for a Bite-Free Environment</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Mosquito-Free Zone</h4>
+                        <p>Our comprehensive mosquito control program targets breeding sites and active populations, allowing you to enjoy your yard without the buzz.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <span class="pest-icon">🕷️</span>
+                        </div>
+                        <h3>Spider Control</h3>
+                        <p>Web-Free Living—Professional Spider Removal and Prevention Services</p>
+                    </div>
+                    <div class="service-hover">
+                        <h4>Spider-Free Guarantee</h4>
+                        <p>Our expert technicians remove existing spiders and implement preventive measures to keep your home spider-free year-round.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Trust TUFAN Pest Control</h2>
+            <div class="trust-grid">
+                <div class="trust-item expert-profile">
+                    <img src="/api/placeholder/150/150" alt="John Smith, Pest Control Expert">
+                    <h3>John Smith</h3>
+                    <p>Certified Pest Control Technician</p>
+                    <p>15+ years experience</p>
+                </div>
+                <div class="trust-item testimonial">
+                    <q>TUFAN's service is unparalleled. They solved our persistent pest problem in just one visit!</q>
+                    <p>- Sarah Johnson, Homeowner</p>
+                    <img src="/api/placeholder/150/50" alt="Client Logo" class="client-logo">
+                </div>
+                <div class="trust-item awards">
+                    <h3>Our Accolades</h3>
+                    <img src="/api/placeholder/100/100" alt="Best Pest Control Service 2023" class="award-logo">
+                    <p>Best Pest Control Service 2023</p>
+                    <img src="/api/placeholder/100/100" alt="Eco-Friendly Certification" class="award-logo">
+                    <p>Eco-Friendly Certified</p>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <span class="trust-badge" title="We guarantee a pest-free environment or your money back!">100% Satisfaction Guarantee</span>
+                <span class="trust-badge" title="Our products are safe for children and pets">Child & Pet Safe</span>
+                <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
+                <span class="trust-badge" title="All our technicians are licensed and insured">Licensed & Insured</span>
+            </div>
+            <div class="social-proof">
+                <div class="social-proof-content">
+                    <p>🎉 matilda from newtown just booked an inspection! | ⭐⭐⭐⭐⭐ 98% of our customers rate us 5 stars</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title">Client Success Stories</h2>
+            <div class="success-grid">
+                <div class="case-study">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/500/250" alt="Office Before Treatment">
+                        <div class="case-study-overlay">
+                            <span>After Treatment: Pest-Free in 24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Office Termite Infestation</h3>
+                        <p>This office was severely infested with termites. We eradicated them completely in just 24 hours, saving the building from further damage.</p>
+                        <a href="#" class="cta-button">Read Full Case Study</a>
+                    </div>
+                </div>
+                <div class="case-study">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/500/250" alt="Restaurant Kitchen Before Treatment">
+                        <div class="case-study-overlay">
+                            <span>After Treatment: 100% Cockroach-Free</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Restaurant Kitchen Cockroach Problem</h3>
+                        <p>A popular local restaurant was struggling with a persistent cockroach infestation. Our treatment eliminated the problem, allowing them to pass their health inspection with flying colors.</p>
+                        <a href="#" class="cta-button">Read Full Case Study</a>
+                    </div>
+                </div>
+                <div class="video-testimonial">
+                    <iframe src="/api/placeholder/560/315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="case-study">
+                    <div class="case-study-image">
+                        <img src="/api/placeholder/500/250" alt="Residential Yard Before Treatment">
+                        <div class="case-study-overlay">
+                            <span>After Treatment: Mosquito-Free Summer</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Residential Mosquito Control</h3>
+                        <p>This family couldn't enjoy their backyard due to a severe mosquito problem. Our treatment allowed them to reclaim their outdoor space and enjoy a pest-free summer.</p>
+                        <a href="#" class="cta-button">Read Full Case Study</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client-logos">
+                <img src="/api/placeholder/120/60" alt="Client Logo 1" class="client-logo">
+                <img src="/api/placeholder/120/60" alt="Client Logo 2" class="client-logo">
+                <img src="/api/placeholder/120/60" alt="Client Logo 3" class="client-logo">
+                <img src="/api/placeholder/120/60" alt="Client Logo 4" class="client-logo">
+                <img src="/api/placeholder/120/60" alt="Client Logo 5" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+        <section id="about" class="about-us">
+        <div class="container">
+            <h2 class="section-title">About TUFAN Pest Control</h2>
+            <div class="about-content">
+                <div class="about-video">
+                    <iframe width="100%" height="450" src="/api/placeholder/800/450" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>At TUFAN Pest Control, we're more than just pest eliminators. We're your neighbors, your protectors, and your partners in creating a safe, pest-free environment for your family and business.</p>
+                <div class="team-section">
+                    <div class="team-member">
+                        <img src="/api/placeholder/200/200" alt="John Tufan - Founder">
+                        <h3>John Tufan</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/200/200" alt="Sarah Lee - Head Technician">
+                        <h3>Sarah Lee</h3>
+                        <p>Head Technician</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/api/placeholder/200/200" alt="Mike Johnson - Customer Service Manager">
+                        <h3>Mike Johnson</h3>
+                        <p>Customer Service Manager</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>2003</h2>
+                            <p>TUFAN Pest Control founded by John Tufan with a mission to provide eco-friendly pest solutions.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h2>2010</h2>
+                            <p>Expanded services to cover all of Sydney, becoming one of the largest pest control providers in the area.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>2015</h2>
+                            <p>Introduced cutting-edge thermal pest control technology, setting a new industry standard.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h2>2020</h2>
+                            <p>Launched our 24/7 emergency pest control service, ensuring we're always there when you need us most.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h2>Today</h2>
+                            <p>Continuing our commitment to excellence, innovation, and customer satisfaction in pest control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    <section class="our-work">
+        <div class="container">
+            <h2 class="section-title">Our Work in Action</h2>
+            <div class="work-grid">
+                <div class="before-after">
+                    <img src="/api/placeholder/600/400" alt="After Pest Control">
+                    <div class="before-image">
+                        <img src="/api/placeholder/600/400" alt="Before Pest Control">
+                    </div>
+                    <div class="slider">
+                        <div class="slider-button"></div>
+                    </div>
+                </div>
+                <div class="infographic">
+                    <h3>Our Pest Control Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-icon">1</div>
+                            <p>Inspection</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">2</div>
+                            <p>Identification</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">3</div>
+                            <p>Treatment</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">4</div>
+                            <p>Prevention</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-showcase">
+                    <iframe src="/api/placeholder/560/315" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="before-after">
+                    <img src="/api/placeholder/600/400" alt="After Termite Treatment">
+                    <div class="before-image">
+                        <img src="/api/placeholder/600/400" alt="Before Termite Treatment">
+                    </div>
+                    <div class="slider">
+                        <div class="slider-button"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+         <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                    <div class="social-proof-contact">
+                        <p>Join over 1,000 satisfied customers in Sydney!</p>
+                        <p>⭐⭐⭐⭐⭐ 4.9/5 average rating from 500+ reviews</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Pest Control Street, Sydney, NSW 2000</p>
+                    <p><i class="fas fa-phone"></i> (02) 9876 5432</p>
+                    <p><i class="fas fa-envelope"></i> info@tufanpestcontrol.com</p>
+                    <h3>Business Hours</h3>
+                    <p><i class="far fa-clock"></i> Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p><i class="far fa-clock"></i> Saturday: 9:00 AM - 2:00 PM</p>
+                    <p><i class="far fa-clock"></i> Sunday: Closed</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26537.678007631415!2d151.20434455!3d-33.8688197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1653645062058!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Residential Pest Control</a></li>
+                        <li><a href="#">Commercial Pest Management</a></li>
+                        <li><a href="#">Termite Control</a></li>
+                        <li><a href="#">Mosquito Control</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Pest Control Resources</h3>
+                    <ul>
+                        <li><a href="#">Pest Identification Guide</a></li>
+                        <li><a href="#">DIY Pest Prevention Tips</a></li>
+                        <li><a href="#">Seasonal Pest Forecast</a></li>
+                        <li><a href="#">Pest Control Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Pest Control Street, Sydney, NSW 2000</p>
+                        <p><i class="fas fa-phone"></i> (02) 9876 5432</p>
+                        <p><i class="fas fa-envelope"></i> info@tufanpestcontrol.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8am-6pm, Sat: 9am-2pm</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <img src="/api/placeholder/80/60" alt="Eco-Friendly Certified" class="trust-badge">
+                <img src="/api/placeholder/80/60" alt="Licensed & Insured" class="trust-badge">
+                <img src="/api/placeholder/80/60" alt="BBB Accredited Business" class="trust-badge">
+                <img src="/api/placeholder/80/60" alt="NPMA Member" class="trust-badge">
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TUFAN Pest Control. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Before-After Slider Functionality
+        function initBeforeAfterSliders() {
+            const sliders = document.querySelectorAll('.before-after');
+            
+            sliders.forEach(slider => {
+                const beforeImage = slider.querySelector('.before-image');
+                const sliderHandle = slider.querySelector('.slider');
+                let isResizing = false;
+
+                const resize = (e) => {
+                    if (isResizing) {
+                        const sliderRect = slider.getBoundingClientRect();
+                        const x = Math.max(0, Math.min(e.clientX - sliderRect.left, sliderRect.width));
+                        beforeImage.style.width = `${(x / sliderRect.width) * 100}%`;
+                        sliderHandle.style.left = `${(x / sliderRect.width) * 100}%`;
+                    }
+                };
+
+                slider.addEventListener('mousedown', () => {
+                    isResizing = true;
+                });
+
+                window.addEventListener('mousemove', resize);
+                window.addEventListener('mouseup', () => {
+                    isResizing = false;
+                });
+
+                // Touch events for mobile
+                slider.addEventListener('touchstart', () => {
+                    isResizing = true;
+                });
+
+                window.addEventListener('touchmove', (e) => {
+                    if (isResizing) {
+                        const touch = e.touches[0];
+                        const sliderRect = slider.getBoundingClientRect();
+                        const x = Math.max(0, Math.min(touch.clientX - sliderRect.left, sliderRect.width));
+                        beforeImage.style.width = `${(x / sliderRect.width) * 100}%`;
+                        sliderHandle.style.left = `${(x / sliderRect.width) * 100}%`;
+                    }
+                });
+
+                window.addEventListener('touchend', () => {
+                    isResizing = false;
+                });
+            });
+        }
+
+        window.addEventListener('load', initBeforeAfterSliders);
+    
+        // Timeline animation
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function animateTimeline() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('load', animateTimeline);
+        window.addEventListener('scroll', animateTimeline);
+    
+// Enhanced social proof update
+        const names = ['matilda', 'jack', 'olivia', 'liam', 'ava', 'noah', 'sophia', 'ethan', 'charlotte', 'oliver'];
+        const suburbs = ['newtown', 'surry hills', 'bondi', 'manly', 'parramatta', 'chatswood', 'cronulla', 'paddington', 'balmain', 'marrickville'];
+        
+        function updateSocialProof() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomSuburb = suburbs[Math.floor(Math.random() * suburbs.length)];
+            
+            const newContent = document.createElement('div');
+            newContent.className = 'social-proof-content';
+            newContent.innerHTML = `<p>🎉 ${randomName} from ${randomSuburb} just booked an inspection! | ⭐⭐⭐⭐⭐ 98% of our customers rate us 5 stars</p>`;
+            
+            const socialProof = document.querySelector('.social-proof');
+            const oldContent = socialProof.querySelector('.social-proof-content');
+            
+            if (oldContent) {
+                oldContent.classList.add('fade-out');
+                setTimeout(() => {
+                    oldContent.remove();
+                    socialProof.appendChild(newContent);
+                    setTimeout(() => newContent.classList.add('active'), 50);
+                }, 500);
+            } else {
+                socialProof.appendChild(newContent);
+                setTimeout(() => newContent.classList.add('active'), 50);
+            }
+        }
+
+        // Initial update
+        updateSocialProof();
+
+        // Update every 20 seconds
+        setInterval(updateSocialProof, 20000);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Testimonial slider
+        const slider = document.querySelector('.testimonial-slider');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        nextButton.addEventListener('click', () => {
+            slider.scrollBy({ left: slider.offsetWidth, behavior: 'smooth' });
+        });
+
+        prevButton.addEventListener('click', () => {
+            slider.scrollBy({ left: -slider.offsetWidth, behavior: 'smooth' });
+        });
+
+         // Enhanced form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show a success message
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+
+    </script>
+</body>
+</html>
