@@ -14,6 +14,10 @@
             --accent-color: #ffeeee;
             --text-color: #333;
             --light-bg: #f8f8f8;
+            --tufan-primary-color: #003366;
+            --tufan-accent-color: #e60000;
+            --tufan-text-color: #ffffff;
+            --tufan-overlay-color: rgba(0, 51, 102, 0.8);
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -23,6 +27,105 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .tufan-container {
+    font-family: 'Futura', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--tufan-text-color);
+}
+.tufan-container .tufan-hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://i.postimg.cc/gcsrDvfy/l5-Ppuv-QSA-Gf8-WSnv6m9-G.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tufan-container .tufan-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%), var(--tufan-overlay-color);
+}
+
+.tufan-container .tufan-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.tufan-container .tufan-logo-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 40px;
+    border: 4px solid var(--tufan-text-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.tufan-container .tufan-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tufan-container .tufan-heading-1 {
+    font-size: 5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tufan-container .tufan-heading-2 {
+    font-size: 3em;
+    color: var(--tufan-accent-color);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tufan-container .tufan-paragraph {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.tufan-container .tufan-cta-button {
+    display: inline-block;
+    background-color: var(--tufan-accent-color);
+    color: var(--tufan-text-color);
+    padding: 15px 40px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tufan-container .tufan-cta-button:hover {
+    background-color: #ff0000;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .tufan-container .tufan-heading-1 {
+        font-size: 3.5em;
+    }
+    .tufan-container .tufan-heading-2 {
+        font-size: 2em;
+    }
+    .tufan-container .tufan-paragraph {
+        font-size: 1.2em;
+    }
+}
+       
 
         body {
             font-family: 'Futura', Arial, sans-serif;
@@ -956,34 +1059,19 @@
     </style>
 </head>
 <body>
-    <header>
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1076-cDGfGTizXPHzy96qtphNbcpjdCqbQV.jpeg" alt="TUFAN Pest Control Logo" class="logo">
-    
-    <nav class="sticky-nav">
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#testimonials">Testimonials</a>
-    </nav>
-
-    <div class="floating-cta">
-        <a href="#contact" class="cta-button">Get Instant Protection Now</a>
-    </div>
-
-    <main>
-        <section id="home" class="hero">
-            <video class="hero-video" autoplay loop muted>
-                <source src="/api/placeholder/1920/1080" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Say Goodbye to Pests—Guaranteed!</h1>
-                    <p>Expert pest control services that protect your home and business. Fast. Reliable. 24/7.</p>
-                    <a href="#contact" class="cta-button">Get Instant Protection Now</a>
+    <div class="tufan-container">
+        <section class="tufan-hero">
+            <div class="tufan-hero-content">
+                <div class="tufan-logo-circle">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1076-cDGfGTizXPHzy96qtphNbcpjdCqbQV.jpeg" alt="TUFAN Pest Control Logo">
                 </div>
+                <h1 class="tufan-heading-1">Say Goodbye to Pests</h1>
+                <h2 class="tufan-heading-2">GUARENTEED!</h2>
+                <p class="tufan-paragraph">Expert pest control services that protect your home and business. Fast. Reliable. 24/7.</p>
+                <a href="#contact" class="tufan-cta-button">Get Instant Protection Now</a>
             </div>
         </section>
+    </div>
  <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Premium Services</h2>
@@ -1099,11 +1187,7 @@
                 <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
                 <span class="trust-badge" title="All our technicians are licensed and insured">Licensed & Insured</span>
             </div>
-            <div class="social-proof">
-                <div class="social-proof-content">
-                    <p>🎉 matilda from newtown just booked an inspection! | ⭐⭐⭐⭐⭐ 98% of our customers rate us 5 stars</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
