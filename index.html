@@ -34,34 +34,76 @@
             color: var(--tufan-text-color);
         }
 
-        .tufan-container .tufan-hero {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+       .tufan-container .tufan-hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px; /* Add padding to account for the gradient */
+}
 
         .tufan-container .tufan-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(47, 79, 79, 0.3) 50%, rgba(47, 79, 79, 0.9) 100%), var(--tufan-overlay-color);
-        }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
 .tufan-container .tufan-hero-content {
-    position: relative;
-    z-index: 2;
+position: relative;
+    z-index: 3; /* Ensure content is above both overlays */
     text-align: center;
     max-width: 900px;
     padding: 0 20px;
 }
 
+/* Modify the hero section */
+.tufan-container .tufan-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px; /* Reduced height */
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    z-index: 2;
+}
+
+
+
+/* Ensure smooth transition */
+.tufan-container .tufan-hero {
+    padding-bottom: 100px; /* Add some padding to the bottom of the hero */
+}
+.services {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+/* Adjust the container of the services section */
+.services .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Optional: Add a subtle shadow to the services section for depth */
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0));
+    pointer-events: none;
+}
 .tufan-container .tufan-logo-circle {
     width: 200px;
     height: 200px;
@@ -107,6 +149,8 @@
 
 
 .tufan-container .tufan-cta-button {
+position: relative;
+    z-index: 4;
   display: inline-block;
   background: linear-gradient(135deg, #ff4a4a, #ff6e6e); /* More dynamic gradient */
   color: #ffffff;
@@ -274,7 +318,7 @@
 
        /* Services Section Background */
 .services {
-  background: linear-gradient(135deg, #f7f7f7, #fafafa); /* Soft gradient */
+  background: linear-gradient(to bottom, #ffffff, #f7f7f7);
   padding: 100px 0;
 }
 
@@ -436,136 +480,336 @@
             font-size: 2.5em;
             margin-bottom: 40px;
         }
-       
-   /* Trust Section Container */
-.trust-section {
-  background-color: #faf7f5; /* Soft beige */
+       .counter-banner {
+background: linear-gradient(505deg, var(--primary-color), #ff4d4d);  padding: 6rem 0;
+  color: #ffffff;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
-  background-image: none; /* Remove any unwanted patterns */
-  opacity: 1; /* Ensure full opacity */
+  padding: 0 2rem;
 }
 
-/* Section Heading */
-.trust-section h2 {
+.counter-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.counter-item {
   text-align: center;
+  flex: 1;
+  min-width: 220px;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.counter-item i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.counter-wrapper {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter, .plus {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(45deg, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.counter-item p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .counter-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@keyframes countUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter, .plus {
+  animation: countUp 5s ease-out forwards;
+}
+
+.plus {
+  opacity: 0;
+}
+   /* Trust Section Container */
+
+
+.trust-section {
+  background-color: #faf7f5;
+  padding: 5rem 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
   font-size: 2.5rem;
-  color: #283845; /* Deep navy for emphasis */
+  color: #003366;
+  text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;
-  opacity: 1; /* Full opacity for text */
 }
 
-/* Trust Section Grid */
 .trust-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
-  opacity: 1; /* Ensure grid has no transparency */
 }
 
-/* Trust Cards */
 .trust-item {
-  background-color: #ffffff; /* White card background */
-  border-radius: 15px; /* Rounded corners */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 1; /* Full opacity */
-  z-index: 1; /* Ensure cards are above background */
 }
 
-/* Hover Effect for Cards */
 .trust-item:hover {
-  transform: translateY(-8px); /* Slight lift */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Individual Profile, Testimonial, and Award Card Styling */
-.expert-profile,
-.testimonial,
-.awards {
-  padding: 2rem;
+.expert-profile {
   text-align: center;
-  opacity: 1; /* Ensure full visibility */
-  background: transparent; /* Prevent background blending */
+  padding: 2rem;
 }
 
-/* Expert Profile Image */
-.expert-profile img {
+.profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 5px solid #f1f1f1;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1rem;
-  background: none; /* Remove unwanted background */
-  padding: 0; /* Remove extra padding */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Softer shadow */
 }
 
-/* Trust Card Heading */
-.expert-profile h3,
-.awards h3 {
-  color: #283845; /* Dark navy for emphasis */
-  margin-bottom: 0.5rem;
+.expert-profile h3 {
   font-size: 1.5rem;
-  opacity: 1; /* Full opacity */
+  color: #003366;
+  margin-bottom: 0.5rem;
 }
 
-/* Testimonial Text Styling */
-.testimonial q {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #555555; /* Medium gray for quotes */
-  opacity: 1; /* Ensure text is fully visible */
+.expert-profile p {
+  color: #555;
+  margin-bottom: 0.5rem;
 }
 
-/* Testimonial Author Text */
-.testimonial cite {
-  display: block;
-  margin-top: 1rem;
+.experience {
   font-weight: 600;
-  color: #ff4a4a; /* Red for testimonial author name */
-  opacity: 1; /* Full visibility */
+  color: #e60000;
 }
 
-/* Call-to-Action Button Styling */
-.trust-section .cta-button {
-  background: linear-gradient(135deg, #ff4a4a, #ff6e6e); /* Red gradient button */
+.btn-bio {
+  background-color: #e60000;
   color: #ffffff;
   border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
   cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+  font-weight: 600;
 }
 
-/* Button Hover Effect */
-.trust-section .cta-button:hover {
-  background: linear-gradient(135deg, #ff6e6e, #ff8e8e);
-  transform: translateY(-3px); /* Small lift on hover */
+.btn-bio:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
 }
-.award-logo {
-  width: 100px; /* Standardize size */
-  height: auto;
-  margin-bottom: 15px;
+
+.testimonial {
+  padding: 2rem;
+  position: relative;
+   height: 100%; /* Ensure the testimonial card uses the full height of the grid */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: #e60000;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  opacity: 0.2;
+}
+
+blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+  margin: 2rem 0 1rem;
+  line-height: 1.6;
+}
+
+cite {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border-radius: 12px; /* Add a slight curve */
+  text-align: right;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  text-align: right;
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.awards {
+  padding: 2rem;
+  text-align: center;
+}
+
+.award {
+  margin-bottom: 1.5rem;
+}
+
+.award-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.award:hover .award-logo {
+  transform: scale(1.1);
+}
+
+.award p {
+  font-weight: 600;
+  color: #003366;
+}
+
+.trust-features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  font-weight: 600;
+  color: #003366;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #e60000;
+  margin-right: 1rem;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #e60000;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.cta-button:hover {
+  background-color: #cc0000;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
   
-}
+  .trust-features {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .feature {
+    margin: 1rem 0;
+  }
 
-/* Awards Logo Hover Effect */
-.award-logo:hover {
-  transform: scale(1.05); /* Slight enlargement */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deepen shadow on hover */
+  .section-title {
+    font-size: 2.2rem;
+  }
 }
-
         @media (max-width: 768px) {
             .trust-grid {
                 grid-template-columns: 1fr;
@@ -849,7 +1093,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
             content: '';
             position: absolute;
             width: 6px;
-            background-color: #fefaf4;
+            background-color: red;
             top: 0;
             bottom: 0;
             left: 50%;
@@ -1161,7 +1405,35 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
             }
         }
 
-      
+       .floating-call-now {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+  }
+
+  .call-now-button {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(45deg, var(--primary-color), #ff4d4d);
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .call-now-button i {
+    margin-right: 10px;
+  }
+
+  .call-now-button:hover {
+    background: linear-gradient(45deg, #ff4d4d, var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
          footer {
             background-color: var(--secondary-color);
             color: #fff;
@@ -1371,35 +1643,103 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
             </div>
         </div>
     </section>
-  <section class="trust-section">
-        <h2>Why Trust TUFAN Pest Control</h2>
-        <div class="trust-grid">
-            <div class="trust-item expert-profile">
-                <img src="https://i.pravatar.cc/150?img=68" alt="John Smith, Pest Control Expert">
-                <h3>John Smith</h3>
-                <p>Certified Pest Control Technician</p>
-                <p>15+ years experience</p>
-            </div>
-            <div class="trust-item testimonial">
-                <q>TUFAN's service is unparalleled. They solved our persistent pest problem in just one visit!</q>
-                <p>- Sarah Johnson, Homeowner</p>
-                <img src="/api/placeholder/100/50" alt="Client Logo" class="client-logo">
-            </div>
-            <div class="trust-item awards">
-                <h3>Our Accolades</h3>
-                <img src="https://i.postimg.cc/8JSpTsbC/Australia-Pest-Control-Award-ezgif-com-webp-to-png-converter-removebg-preview.png" alt="Best Pest Control Service 2023" class="award-logo">
-                <p>Best Pest Control Service 2023</p>
-                <img src="https://i.postimg.cc/W1jqLzCP/pngtree-green-eco-friendly-badge-design-png-image-6093125-removebg-preview.png" alt="Eco-Friendly Certification" class="award-logo">
-                <p>Eco-Friendly Certified</p>
-            </div>
+<section class="counter-banner">
+  <div class="container">
+    <div class="counter-grid">
+      <div class="counter-item">
+        <i class="fas fa-users"></i>
+        <div class="counter-wrapper">
+          <span class="counter" data-target="5000">0</span><span class="plus">+</span>
         </div>
-        <div class="trust-badges">
-            <span class="trust-badge" title="We guarantee a pest-free environment or your money back!">100% Satisfaction Guarantee</span>
-            <span class="trust-badge" title="Our products are safe for children and pets">Child<br>&<br>Pet Safe</span>
-            <span class="trust-badge" title="We respond to all inquiries within 2 hours">Fast Response Guarantee</span>
-            <span class="trust-badge" title="All our technicians are licensed and insured">Licensed<br>&<br>Insured</span>
+        <p>Customers Served</p>
+      </div>
+      <div class="counter-item">
+        <i class="fas fa-calendar-alt"></i>
+        <div class="counter-wrapper">
+          <span class="counter" data-target="20">0</span><span class="plus">+</span>
         </div>
-    </section>
+        <p>Years in Business</p>
+      </div>
+      <div class="counter-item">
+        <i class="fas fa-star"></i>
+        <div class="counter-wrapper">
+          <span class="counter" data-target="250">0</span><span class="plus">+</span>
+        </div>
+        <p>5-Star Reviews</p>
+      </div>
+      <div class="counter-item">
+        <i class="fas fa-home"></i>
+        <div class="counter-wrapper">
+          <span class="counter" data-target="10000">0</span><span class="plus">+</span>
+        </div>
+        <p>Homes Protected</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="container">
+    <h2 class="section-title">Why Trust TUFAN Pest Control</h2>
+    <div class="trust-grid">
+      <div class="trust-item expert-profile">
+        <div class="profile-image">
+          <img src="https://i.pravatar.cc/150?img=68" alt="John Smith">
+        </div>
+        <h3>John Smith</h3>
+        <p>Certified Pest Control Technician</p>
+        <p class="experience">15+ years experience</p>
+        <button class="btn-bio">View Bio</button>
+      </div>
+      <div class="trust-item testimonial">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <blockquote>
+          "TUFAN's service is unparalleled. They solved our persistent pest problem in just one visit!"
+        </blockquote>
+        - Sarah Johnson, Homeowner
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      <div class="trust-item awards">
+        <h3>Our Accolades</h3>
+        <div class="award">
+          <img src="https://i.postimg.cc/8JSpTsbC/Australia-Pest-Control-Award-ezgif-com-webp-to-png-converter-removebg-preview.png" alt="Best Pest Control Service 2023" class="award-logo">
+          <p>Best Pest Control Service 2023</p>
+        </div>
+        <div class="award">
+          <img src="https://i.postimg.cc/W1jqLzCP/pngtree-green-eco-friendly-badge-design-png-image-6093125-removebg-preview.png" alt="Eco-Friendly Certification" class="award-logo">
+          <p>100% Eco-Friendly Certified</p>
+        </div>
+      </div>
+    </div>
+    <div class="trust-features">
+      <div class="feature">
+        <i class="fas fa-check-circle"></i>
+        <span>100% Satisfaction Guarantee</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-child"></i>
+        <span>Child & Pet Safe</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-bolt"></i>
+        <span>Fast Response Guarantee</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <span>Licensed & Insured</span>
+      </div>
+    </div>
+    <div class="cta-container">
+      <a href="#contact-us" class="cta-button">Get a Free Consultation</a>
+    </div>
+  </div>
+</section>
 <section id="reviews" class="reviews">
     <div class="container">
         <h2 class="section-title">Google Reviews</h2>
@@ -1645,6 +1985,11 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
         </div>
     </section>
 
+<div class="floating-call-now">
+  <a href="tel:+61412853150" class="call-now-button">
+    <i class="fas fa-phone-alt"></i> Call Now
+  </a>
+</div>
 
     <footer>
         <div class="container">
@@ -1704,6 +2049,110 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
     </footer>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const duration = 3000; // 5 seconds
+
+  const animateValue = (obj, start, end, duration) => {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easedProgress = Math.pow(progress, 2); // Easing function: Power of 2
+      obj.textContent = Math.floor(easedProgress * (end - start) + start).toLocaleString();
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        obj.nextElementSibling.style.opacity = 1; // Show the '+' sign at the end
+      }
+    };
+    window.requestAnimationFrame(step);
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          animateValue(counter, 0, target, duration);
+        });
+        observer.disconnect(); // Stop observing once animation starts
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(document.querySelector('.counter-banner'));
+});
+    document.addEventListener('DOMContentLoaded', function() {
+  const bioButton = document.querySelector('.btn-bio');
+  bioButton.addEventListener('click', function() {
+    const bioContent = `
+      <h3>John Smith</h3>
+      <p>John Smith is a certified pest control technician with over 15 years of experience in residential and commercial pest management. He specializes in eco-friendly solutions and is dedicated to providing safe, effective pest control services.</p>
+      <ul>
+        <li>Certified by the National Pest Management Association</li>
+        <li>Specialized in Integrated Pest Management (IPM) techniques</li>
+        <li>Expert in handling a wide range of pests, including termites, rodents, and bed bugs</li>
+        <li>Committed to using environmentally friendly pest control methods</li>
+      </ul>
+    `;
+    
+    const modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '1000';
+
+    const modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#fff';
+    modalContent.style.padding = '2rem';
+    modalContent.style.borderRadius = '10px';
+    modalContent.style.maxWidth = '500px';
+    modalContent.style.maxHeight = '80%';
+    modalContent.style.overflow = 'auto';
+    modalContent.innerHTML = bioContent;
+
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.marginTop = '1rem';
+    closeButton.style.padding = '0.5rem 1rem';
+    closeButton.style.backgroundColor = '#e60000';
+    closeButton.style.color = '#fff';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
+
+    closeButton.addEventListener('click', function() {
+      document.body.removeChild(modal);
+    });
+
+    modalContent.appendChild(closeButton);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+  });
+
+  const trustItems = document.querySelectorAll('.trust-item');
+  trustItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px)';
+    });
+    item.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+});
     // Before-After Slider Functionality
         function initBeforeAfterSliders() {
             const sliders = document.querySelectorAll('.before-after');
