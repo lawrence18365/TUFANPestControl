@@ -34,17 +34,17 @@
             color: var(--tufan-text-color);
         }
 
-       .tufan-container .tufan-hero {
-    position: relative;
-    height: 100vh;
-    background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 100px; /* Add padding to account for the gradient */
-}
+     .tufan-container .tufan-hero {
+        position: relative;
+        height: 100vh;
+        background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
 
         .tufan-container .tufan-hero::before {
     content: '';
@@ -58,12 +58,12 @@
 }
 
 .tufan-container .tufan-hero-content {
-position: relative;
-    z-index: 3; /* Ensure content is above both overlays */
-    text-align: center;
-    max-width: 900px;
-    padding: 0 20px;
-}
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        max-width: 900px;
+        padding: 0 20px;
+    }
 
 /* Modify the hero section */
 .tufan-container .tufan-hero::after {
@@ -104,91 +104,94 @@ position: relative;
     background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0));
     pointer-events: none;
 }
-.tufan-container .tufan-logo-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 40px;
-    border: 4px solid var(--tufan-text-color);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
+ .tufan-container .tufan-logo-circle {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 60px; /* Increased bottom margin */
+        border: 4px solid var(--tufan-text-color);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
 
 .tufan-container .tufan-logo-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.tufan-container .tufan-heading-1 {
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    Font-size: 56px; Font-weight: 900; Color: white;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    
-}
-
-.tufan-container .tufan-heading-2 {
-  font-size: 48px;
-  font-weight: 700; /* Increase weight for stronger impact */
-  color: #ffffff; /* Change text to white */
-  text-shadow: 2px 2px 4px rgba(211, 47, 47, 0.8); /* Strong red shadow */
-  padding-top: 20px; 
-  padding-bottom: 20px;
-}
-
-.tufan-container .tufan-paragraph {
-     font-size: 28px;
-     Font-weight: #f8f8f8;
-     Color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-
-.tufan-container .tufan-cta-button {
-position: relative;
-    z-index: 4;
-  display: inline-block;
-  background: linear-gradient(135deg, #ff4a4a, #ff6e6e); /* More dynamic gradient */
-  color: #ffffff;
-  padding: 18px 50px;
-  font-size: 1.4em;
-  text-decoration: none;
-  border-radius: 35px; /* Smooth rounded edges */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.tufan-container .tufan-cta-button:hover {
-  background: linear-gradient(135deg, #ff7070, #ff4a4a); /* Reverse gradient for hover */
-  transform: translateY(-5px); /* Hover animation: Lift up */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Increased shadow */
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 12px rgba(255, 74, 74, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(255, 74, 74, 0.6); }
-  100% { box-shadow: 0 0 12px rgba(255, 74, 74, 0.4); }
-}
-
-
-@media (max-width: 768px) {
-    .tufan-container .tufan-heading-1 {
-        font-size: 3.5em;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-    .tufan-container .tufan-heading-2 {
-        font-size: 2em;
+
+ .tufan-container .tufan-heading-1 {
+        font-size: 56px;
+        font-weight: 900;
+        color: white;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px; /* Added margin */
     }
+ .tufan-container .tufan-heading-2 {
+        font-size: 42px; /* Reduced size */
+        font-weight: 800; /* Slightly reduced weight */
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(211, 47, 47, 0.8); /* Reduced shadow */
+        margin-bottom: 30px; /* Increased margin */
+    }
+
     .tufan-container .tufan-paragraph {
-        font-size: 1.2em;
+        font-size: 24px; /* Slightly reduced size */
+        font-weight: 400;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-bottom: 40px; /* Increased margin */
     }
-}
-       
+    
+    .tufan-container .tufan-cta-button {
+        position: relative;
+        z-index: 4;
+        display: inline-block;
+        background: linear-gradient(135deg, #ff4a4a, #ff6e6e);
+        color: #ffffff;
+        padding: 18px 50px;
+        font-size: 1.4em;
+        text-decoration: none;
+        border-radius: 35px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+    }
 
+    .tufan-container .tufan-cta-button:hover {
+        background: linear-gradient(135deg, #ff7070, #ff4a4a);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+@keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 74, 74, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 74, 74, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 74, 74, 0);
+        }
+    }
+    
+  @media (max-width: 768px) {
+        .tufan-container .tufan-heading-1 {
+            font-size: 40px;
+        }
+        .tufan-container .tufan-heading-2 {
+            font-size: 32px;
+        }
+        .tufan-container .tufan-paragraph {
+            font-size: 18px;
+        }
+        .tufan-container .tufan-cta-button {
+            font-size: 1.2em;
+            padding: 15px 40px;
+        }
+    }
         body {
             font-family: 'Montserrat', Arial, sans-serif; /* Changed to Montserrat */
             line-height: 1.6;
@@ -1546,18 +1549,18 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        
 </head>
 <body>
     <div class="tufan-container">
-        <section class="tufan-hero">
-            <div class="tufan-hero-content">
-                <div class="tufan-logo-circle">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1076-cDGfGTizXPHzy96qtphNbcpjdCqbQV.jpeg" alt="TUFAN Pest Control Logo">
-                </div>
-                <h1 class="tufan-heading-1">Say Goodbye to Pests</h1>
-                <h2 class="tufan-heading-2">GUARENTEED!</h2>
-                <p class="tufan-paragraph">Professional Pest Control Services for a Safe and Pest-Free Home.</p>
-                <a href="#contact" class="tufan-cta-button">Get Instant Protection Now</a>
+    <section class="tufan-hero">
+        <div class="tufan-hero-content">
+            <div class="tufan-logo-circle">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_1076-cDGfGTizXPHzy96qtphNbcpjdCqbQV.jpeg" alt="TUFAN Pest Control Logo">
             </div>
-        </section>
-    </div>
+            <h1 class="tufan-heading-1">Say Goodbye to Pests</h1>
+            <h2 class="tufan-heading-2">GUARANTEED!</h2>
+            <p class="tufan-paragraph">Professional Pest Control Services for a Safe and Pest-Free Home.</p>
+            <a href="#contact" class="tufan-cta-button">Get Instant Protection Now</a>
+        </div>
+    </section>
+</div>
  <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Premium Services</h2>
