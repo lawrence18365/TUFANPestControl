@@ -6,7 +6,7 @@
     <title>TUFAN Pest Control | Say Goodbye to Pests—Guaranteed!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
         :root {
             --primary-color: #e60000;
@@ -27,31 +27,33 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .tufan-container {
-    font-family: 'Futura', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--tufan-text-color);
-}
-.tufan-container .tufan-hero {
-    position: relative;
-    height: 100vh;
-    background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.tufan-container .tufan-hero::before {
-     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%), var(--tufan-overlay-color);
-}
+        .tufan-container {
+            font-family: 'Montserrat', Arial, sans-serif; /* Changed to Montserrat */
+            line-height: 1.6;
+            color: var(--tufan-text-color);
+        }
+
+        .tufan-container .tufan-hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://cdn-uploads.huggingface.co/production/uploads/noauth/h6fbV-uPImlEnNGARf0g0.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tufan-container .tufan-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(47, 79, 79, 0.3) 50%, rgba(47, 79, 79, 0.9) 100%), var(--tufan-overlay-color);
+        }
 .tufan-container .tufan-hero-content {
     position: relative;
     z-index: 2;
@@ -77,41 +79,47 @@
 }
 
 .tufan-container .tufan-heading-1 {
-    font-size: 5em;
-    font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    Font-size: 56px; Font-weight: 800; Color: white;
 }
 
 .tufan-container .tufan-heading-2 {
-    font-size: 3em;
-    color: var(--tufan-accent-color);
+    font-size: 48px;
+     Font-weight: 900;
+     Color: #ff4141;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tufan-container .tufan-paragraph {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+     font-size: 28px;
+     Font-weight: #f8f8f8;
+     Color: white;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tufan-container .tufan-cta-button {
     display: inline-block;
-    background-color: var(--tufan-accent-color);
-    color: var(--tufan-text-color);
-    padding: 15px 40px;
-    font-size: 1.2em;
+    background: linear-gradient(90deg, #ff4141 0%, #ff7070 100%); /* Gradient Background */
+    color: #ffffff; /* White text color */
+    padding: 18px 50px; /* Increased padding for a larger button */
+    font-size: 1.4em; /* Slightly larger font size */
     text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 30px; /* Smooth, rounded edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transitions */
+    cursor: pointer;
 }
 
 .tufan-container .tufan-cta-button:hover {
-    background-color: #ff0000;
-    transform: translateY(-3px);
+    background: linear-gradient(90deg, #ff7070 0%, #ff4141 100%); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Slightly lift button */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for a more clickable feel */
 }
+
 
 @media (max-width: 768px) {
     .tufan-container .tufan-heading-1 {
@@ -127,10 +135,10 @@
        
 
         body {
-            font-family: 'Futura', Arial, sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif; /* Changed to Montserrat */
             line-height: 1.6;
             color: var(--text-color);
-            background-color: black;
+            background-color: #f2f2f2;
         }
 
         .container {
@@ -261,7 +269,7 @@
         }
 
         .services {
-            background-color: black;
+            background-color: #f9f6f2;
             padding: 100px 0;
         }
 
@@ -342,13 +350,13 @@
         }
         .section-title {
             text-align: center;
-            color: white;
+            color: black;
             font-size: 2.5em;
             margin-bottom: 40px;
         }
        
         .trust-section {
-            background-color: black;
+            background-color: #f2f2f2;
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
@@ -560,7 +568,7 @@
             }
         }
   .reviews {
-    background-color: black;
+    background-color: #eef7fc;
         padding: 100px 0;
     }
     .reviews .section-title {
@@ -642,7 +650,7 @@
         }
     }
           .about-us {
-            background-color: black;
+            background-color: #faf3e0;
             padding: 100px 0;
         }
         .about-us p{
@@ -661,6 +669,26 @@
             align-items: center;
             gap: 50px;
         }
+        .about-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0; /* Adjust as needed */
+    padding: 20px; /* Space around the photo */
+    background-color: #ffffff; /* White frame */
+    border-radius: 12px; /* Smooth corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    border: 1px solid #e0e0e0; /* Light border */
+    max-width: 90%; /* Control width */
+}
+
+.about-photo {
+    border-radius: 8px; /* Slightly rounded corners on the image */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on image */
+}
+
         
 
         .team-section {
@@ -780,7 +808,7 @@
             }
         }
       .our-work {
-    background-color: black;
+    background-color: #fffde7;
     padding: 100px 0;
     overflow: hidden;
 }
@@ -1309,8 +1337,9 @@
     <div class="container">
         <h2 class="section-title">About TUFAN Pest Control</h2>
         <div class="about-content">
-            <div class="about-photo">
-                <img src="https://i.postimg.cc/6QJB0LzV/image-79.webp" alt="TUFAN Pest Control Team" width="100%" height="450">
+           <div class="about-photo-container">
+                    <img src="https://i.postimg.cc/6QJB0LzV/image-79.webp" alt="TUFAN Team Photo" width="100%" height="450" class="about-photo">
+
             </div>
                 <t>At TUFAN Pest Control, we're more than just pest eliminators. We're your neighbors, your protectors, and your partners in creating a safe, pest-free environment for your family and business.</t>
                 <div class="team-section">
