@@ -17,7 +17,7 @@
             --tufan-primary-color: #003366;
             --tufan-accent-color: #e60000;
             --tufan-text-color: #ffffff;
-            --tufan-overlay-color: rgba(0, 0, 0, .6);
+            --tufan-overlay-color: rgba(0, 0, 0, 0.3);
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -63,8 +63,8 @@
 }
 
 .tufan-container .tufan-logo-circle {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 40px;
@@ -79,45 +79,56 @@
 }
 
 .tufan-container .tufan-heading-1 {
-    margin-bottom: 20px;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    Font-size: 56px; Font-weight: 800; Color: white;
+    Font-size: 56px; Font-weight: 900; Color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
 }
 
 .tufan-container .tufan-heading-2 {
-    font-size: 48px;
-     Font-weight: 900;
-     Color: #ff4141;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 48px;
+  font-weight: 700; /* Increase weight for stronger impact */
+  color: #ffffff; /* Change text to white */
+  text-shadow: 2px 2px 4px rgba(211, 47, 47, 0.8); /* Strong red shadow */
+  padding-top: 20px; 
+  padding-bottom: 20px;
 }
 
 .tufan-container .tufan-paragraph {
      font-size: 28px;
      Font-weight: #f8f8f8;
      Color: white;
-    margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
+
 .tufan-container .tufan-cta-button {
-    display: inline-block;
-    background: linear-gradient(90deg, #ff4141 0%, #ff7070 100%); /* Gradient Background */
-    color: #ffffff; /* White text color */
-    padding: 18px 50px; /* Increased padding for a larger button */
-    font-size: 1.4em; /* Slightly larger font size */
-    text-decoration: none;
-    border-radius: 30px; /* Smooth, rounded edges */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transitions */
-    cursor: pointer;
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4a4a, #ff6e6e); /* More dynamic gradient */
+  color: #ffffff;
+  padding: 18px 50px;
+  font-size: 1.4em;
+  text-decoration: none;
+  border-radius: 35px; /* Smooth rounded edges */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .tufan-container .tufan-cta-button:hover {
-    background: linear-gradient(90deg, #ff7070 0%, #ff4141 100%); /* Reverse gradient on hover */
-    transform: translateY(-3px); /* Slightly lift button */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for a more clickable feel */
+  background: linear-gradient(135deg, #ff7070, #ff4a4a); /* Reverse gradient for hover */
+  transform: translateY(-5px); /* Hover animation: Lift up */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Increased shadow */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 12px rgba(255, 74, 74, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 74, 74, 0.6); }
+  100% { box-shadow: 0 0 12px rgba(255, 74, 74, 0.4); }
 }
 
 
@@ -138,7 +149,7 @@
             font-family: 'Montserrat', Arial, sans-serif; /* Changed to Montserrat */
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f2f2f2;
+            background-color: #fefaf4;
         }
 
         .container {
@@ -149,9 +160,9 @@
 
         .logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            max-width: 200px;
+            top: 40px;
+            left: 40px;
+            max-width: 500px;
             z-index: 1000;
             transition: var(--transition);
         }
@@ -261,63 +272,134 @@
             padding: 100px 0;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: var(--secondary-color);
-        }
+       /* Services Section Background */
+.services {
+  background: linear-gradient(135deg, #f7f7f7, #fafafa); /* Soft gradient */
+  padding: 100px 0;
+}
 
-        .services {
-            background-color: #f9f6f2;
-            padding: 100px 0;
-        }
+/* Service Grid Styling */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+}
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 0 20px;
-        }
+/* Service Item (Individual Card) Styling */
+.service-item {
+  background-color: #ffffff; /* Pure white card background */
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  height: 300px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-        .service-item {
-            background-color: var(--light-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: var(--transition);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            height: 300px;
-        }
+/* Service Item Hover Effects */
+.service-item:hover {
+  transform: translateY(-8px); /* Slight lift effect */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Shadow intensification */
+}
 
-    
-        .service-content {
-            padding: 30px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+/* Service Card Hover Overlay Effect */
+.service-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 74, 74, 0); /* Initial transparent overlay */
+  border-radius: 15px;
+  z-index: 0;
+  transition: background 0.3s ease-in-out;
+}
+
+.service-item:hover::before {
+  background: rgba(255, 74, 74, 0.1); /* Red overlay on hover */
+}
+
+/* Service Content Styling */
+.service-content {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Service Item Text Styling */
+.service-item h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333333; /* Darker text color for readability */
+  transition: color 0.3s ease-in-out;
+}
+
+.service-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666; /* Medium gray for body text */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Text Color Change on Hover */
+.service-item:hover h3,
+.service-item:hover p {
+  color: #ff4a4a; /* Change to red on hover */
+}
+
+/* Icon Styling */
+.service-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover img {
+  transform: scale(1.1); /* Slight icon enlargement */
+}
+
+/* Service Item Link Styling */
+.service-item a {
+  text-decoration: none;
+  color: #ff4a4a;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-item a:hover {
+  color: #ff6e6e; /* Softer red on hover */
+}
 
         .service-icon {
             font-size: 3em;
-            color: var(--primary-color);
+            width: 60px; /* Increase size */
+  height: 60px;
+                color: var(--primary-color);
             margin-bottom: 20px;
             transition: var(--transition);
+            texta
         }
 
        
 
         .service-item h3 {
-            margin-bottom: 15px;
-            color: black;
-            font-size: 1.5em;
+            font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 10px;
         }
 
         .service-item p {
-            color: black;
-            font-size: 1em;
-            line-height: 1.6;
+          font-size: 16px;
+  line-height: 1.5;
+  color: #555555;
         }
 
         
@@ -355,95 +437,134 @@
             margin-bottom: 40px;
         }
        
-        .trust-section {
-            background-color: #f2f2f2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+   /* Trust Section Container */
+.trust-section {
+  background-color: #faf7f5; /* Soft beige */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-image: none; /* Remove any unwanted patterns */
+  opacity: 1; /* Ensure full opacity */
+}
 
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: black;
-            margin-bottom: 3rem;
-        }
+/* Section Heading */
+.trust-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #283845; /* Deep navy for emphasis */
+  margin-bottom: 3rem;
+  font-weight: 700;
+  opacity: 1; /* Full opacity for text */
+}
 
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+/* Trust Section Grid */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+  margin-bottom: 3rem;
+  opacity: 1; /* Ensure grid has no transparency */
+}
 
-        .trust-item {
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+/* Trust Cards */
+.trust-item {
+  background-color: #ffffff; /* White card background */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1; /* Full opacity */
+  z-index: 1; /* Ensure cards are above background */
+}
 
-        .trust-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+/* Hover Effect for Cards */
+.trust-item:hover {
+  transform: translateY(-8px); /* Slight lift */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
 
-        .expert-profile, .testimonial, .awards {
-            padding: 2rem;
-            text-align: center;
-        }
+/* Individual Profile, Testimonial, and Award Card Styling */
+.expert-profile,
+.testimonial,
+.awards {
+  padding: 2rem;
+  text-align: center;
+  opacity: 1; /* Ensure full visibility */
+  background: transparent; /* Prevent background blending */
+}
 
-        .expert-profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid #e60000;
-        }
+/* Expert Profile Image */
+.expert-profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  background: none; /* Remove unwanted background */
+  padding: 0; /* Remove extra padding */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Softer shadow */
+}
 
-        .expert-profile h3, .awards h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
+/* Trust Card Heading */
+.expert-profile h3,
+.awards h3 {
+  color: #283845; /* Dark navy for emphasis */
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  opacity: 1; /* Full opacity */
+}
 
-        .testimonial q {
-            font-style: italic;
-            display: block;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.6;
-        }
+/* Testimonial Text Styling */
+.testimonial q {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555555; /* Medium gray for quotes */
+  opacity: 1; /* Ensure text is fully visible */
+}
 
-        .client-logo, .award-logo {
-            max-width: 100px;
-            margin: 1rem auto;
-        }
+/* Testimonial Author Text */
+.testimonial cite {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #ff4a4a; /* Red for testimonial author name */
+  opacity: 1; /* Full visibility */
+}
 
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+/* Call-to-Action Button Styling */
+.trust-section .cta-button {
+  background: linear-gradient(135deg, #ff4a4a, #ff6e6e); /* Red gradient button */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 
-        .trust-badge {
-            background-color: #e60000;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            cursor: help;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+/* Button Hover Effect */
+.trust-section .cta-button:hover {
+  background: linear-gradient(135deg, #ff6e6e, #ff8e8e);
+  transform: translateY(-3px); /* Small lift on hover */
+}
+.award-logo {
+  width: 100px; /* Standardize size */
+  height: auto;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 12px; /* Add a slight curve */
+  
+}
 
-        .trust-badge:hover {
-            background-color: #cc0000;
-            transform: translateY(-2px);
-        }
+/* Awards Logo Hover Effect */
+.award-logo:hover {
+  transform: scale(1.05); /* Slight enlargement */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Deepen shadow on hover */
+}
 
         @media (max-width: 768px) {
             .trust-grid {
@@ -568,11 +689,11 @@
             }
         }
   .reviews {
-    background-color: #eef7fc;
+    background-color: #f9f9f9;
         padding: 100px 0;
     }
     .reviews .section-title {
-        color: white;
+        color: black;
         text-align: center;
         margin-bottom: 40px;
     }
@@ -596,8 +717,7 @@
         background-color: #fff;
         border-radius: 15px;
         padding: 30px;
-        box-shadow: var(--box-shadow);
-        transition: var(--transition);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */        transition: var(--transition);
         display: flex;
         flex-direction: column;
         height: 400px; /* Fixed height for all cards */
@@ -650,7 +770,7 @@
         }
     }
           .about-us {
-            background-color: #faf3e0;
+            background-color: #faf7f5;
             padding: 100px 0;
         }
         .about-us p{
@@ -660,7 +780,7 @@
         .about-us t {
             text-align: center;
             width: 80%;
-            color: white;
+            color: black;
         }
 
         .about-content {
@@ -706,7 +826,7 @@
          .team-member h3 {
             text-align: center;
             max-width: 250px;
-            color: white;
+            color: black;
         }
 
 
@@ -729,7 +849,7 @@
             content: '';
             position: absolute;
             width: 6px;
-            background-color: var(--primary-color);
+            background-color: #fefaf4;
             top: 0;
             bottom: 0;
             left: 50%;
@@ -808,7 +928,7 @@
             }
         }
       .our-work {
-    background-color: #fffde7;
+    background-color: #f9f9f9;
     padding: 100px 0;
     overflow: hidden;
 }
@@ -947,13 +1067,14 @@
     }
 }
        .contact {
-            background-color: black;
+            background-color: #faf7f5;
             padding: 100px 0;
         }
 
         .contact-content {
             display: flex;
             gap: 50px;
+            color: white;
         }
 
         .contact-form {
@@ -972,7 +1093,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            color: white;
+            color: black;
         }
 
         .form-control {
@@ -998,17 +1119,24 @@
             text-align: center;
             font-weight: bold;
         }
+         .social-proof-contact p{
+            color: black;
+        }
 
         .contact-info h3 {
             margin-bottom: 20px;
+                        color: black;
+
         }
 
         .contact-info p {
             margin-bottom: 10px;
+                        color: black;
+
         }
 
         .contact-info i {
-            color: var(--primary-color);
+            color: black;
             margin-right: 10px;
             width: 20px;
             text-align: center;
